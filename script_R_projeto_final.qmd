@@ -55,15 +55,38 @@ Os parâmetros utilizados para a geração das tabelas no projeto foram os segui
 
 A utilização desses parâmetros foi fundamental para uma análise detalhada e completa sobre o perfil religioso do Brasil, permitindo investigar diferentes aspectos socioculturais relacionados à religião em diferentes contextos geográficos e demográficos.
 
-### Tabela 1489: População residente, por cor ou raça, segundo o sexo a a religião - Resultados Gerais da Amostra
+### Tabela - 2094:	População residente por cor ou raça e religião 2000 e 2010
+```{r}
+info_sidra(2094)
+```
+Por limitações na API decidimos pegar os dados separadamente por ano
 
+Dados de 2000
 ```{r}
 #| message: false
-dados <- get_sidra(x = 1489,
-                   period = "2010",
+dados_2000 <- get_sidra(x = 2094,
+                   period = "2000",
                    geo = "State",
                    header = T,
                    format = 3)
+```
+Dados de 2010
+```{r}
+dados_2010 <- get_sidra(x = 2094,
+                   period = c("2010"),
+                   geo = "State",
+                   header = T,
+                   format = 3)
+```
+
+Unindo tabelas
+```{r}
+dados <- bind_rows(dados_2000,dados_2010)
+```
+
+Após a união das tabelas não precisamos mais dos dados baixados
+```{r}
+rm(dados_2000,dados_2010)
 ```
 
 Informações da tabela
@@ -96,16 +119,13 @@ Verificando quais informações temos sobre a variável cor_ou_raca
 ```{r}
 unique(dados$cor_ou_raca)
 ```
-Verificando quais informações temos sobre a variável unidade_da_federação
-```{r}
-unique(dados$unidade_da_federacao)
-```
+
 Ao observar os dados de forma geral, notamos que existe uma observação chamada "Total". Esta observação não é interessante para nossa análise, pois podemos facilmente calcular a soma de todas as outras observações para obter o mesmo resultado.
 
 Removendo observação Total das variáveis cor_ou_raca, sexo e religiao
 ```{r}
 dados <- dados %>% 
-  filter(cor_ou_raca != "Total", sexo != "Total", religiao != "Total")
+  filter(cor_ou_raca != "Total", religiao != "Total")
 ```
 
 Obtendo mais informações da base
@@ -125,12 +145,6 @@ Obtendo mais informações da base
 skim_without_charts(dados)
 ```
 Agora que temos nossa variável valor limpa, precisamos ajustar os valores da variável religião. Os valores da variável estão atualmente desagregados em vários níveis, o que dificulta a interpretação. Por esse motivo, precisamos agrupar algumas informações.
-
-Agrupando grupos religiosos
-```{r}
-
-```
-
 
 
 
