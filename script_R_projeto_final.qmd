@@ -9,15 +9,15 @@ editor: visual
 
 ### Resumo do Projeto Final de Data Analytics
 
-O Projeto Final de Data Analytics do Google consistiu em uma análise sobre o perfil religioso do Brasil, utilizando um conjunto de dados público do Censo 2010 do IBGE. O processo começou com a formulação da pergunta de pesquisa, que foi definida como investigar o perfil religioso da população brasileira.
+O Projeto Final de Data Analytics do Google consistiu em uma análise sobre o perfil religioso do Brasil, utilizando um conjunto de dados público do Censo de 2000 e 2010 do IBGE. O processo começou com a formulação da pergunta de pesquisa, que foi definida como investigar o perfil religioso da população brasileira.
 
-Após a definição da pergunta, foram pesquisadas fontes de dados adequadas para obter informações relevantes. O conjunto de dados do Censo 2010 do IBGE foi identificado como a fonte ideal para o estudo, pois continha informações sobre a religião da população brasileira.
+Após a definição da pergunta, foram pesquisadas fontes de dados adequadas para obter informações relevantes. O conjunto de dados do Censo de 2000 e 2010 do IBGE foi identificado como a fonte ideal para o estudo, pois continha informações sobre a religião da população brasileira.
 
 Em seguida, os dados foram limpos e processados utilizando a linguagem de programação R, resultando na criação de uma tabela de dados. Com a tabela pronta, foram criadas visualizações utilizando a plataforma Tableau, facilitando a compreensão dos dados analisados.
 
 ### Obtenção dos dados
 
-Para a obtenção dos dados, foi utilizado o pacote SIDRA, uma API que permite a raspagem (ou coleta) de dados de forma rápida e prática. O SIDRA (Sistema IBGE de Recuperação Automática) é uma ferramenta fornecida pelo Instituto Brasileiro de Geografia e Estatística (IBGE) que possibilita o acesso a diversas informações estatísticas, incluindo os dados do Censo 2010 referentes à religião da população brasileira.
+Para a obtenção dos dados, foi utilizado o pacote SIDRA, uma API que permite a raspagem (ou coleta) de dados de forma rápida e prática. O SIDRA (Sistema IBGE de Recuperação Automática) é uma ferramenta fornecida pelo Instituto Brasileiro de Geografia e Estatística (IBGE) que possibilita o acesso a diversas informações estatísticas, incluindo os dados do Censo de 2000 e 2010 referentes à religião da população brasileira.
 
 Com o auxílio do pacote SIDRA, os dados necessários para a análise do projeto foram obtidos de maneira automatizada, facilitando o processo de coleta e preparação dos dados para a análise de Data Analytics. Esse tipo de abordagem permite que os dados sejam acessados de forma eficiente e confiável, garantindo a qualidade e a atualização das informações utilizadas no projeto.
 
